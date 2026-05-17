@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reauto+ | Tu Auto, Mejor</title>
+    <style>
+        :root {
+            --primary-blue: #00c6ff;
+            --deep-blue: #007bff;
+            --dark-bg: #00050a;
+            --text-dark: #f1f5f9;
+        }
+        body {
+            margin: 0; padding: 0;
+            background-color: var(--dark-bg);
+            color: #ffffff;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            text-align: center;
+        }
+        /* HERO HEADER */
+        .hero-header {
+            background: radial-gradient(circle at center, #001f3f 0%, #00050a 100%);
+            padding: 80px 20px;
+            border-bottom: 1px solid rgba(0, 198, 255, 0.2);
+        }
+        .hero-header h1 {
+            font-size: 3rem; margin-bottom: 10px; color: var(--primary-blue);
+        }
+        /* VIDEO RESPONSIVO */
+        .section-video { max-width: 800px; margin: 50px auto; padding: 0 20px; }
+        .video-responsive {
+            position: relative; padding-bottom: 56.25%; height: 0;
+            border-radius: 16px; overflow: hidden;
+            border: 1px solid rgba(0, 198, 255, 0.3);
+            box-shadow: 0 0 25px rgba(0, 198, 255, 0.15);
+        }
+        .video-responsive iframe {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+        }
+        /* BOTÓN WHATSAPP ANIMADO */
+        .whatsapp-container { margin: 40px auto; display: flex; justify-content: center; }
+        .btn-whatsapp {
+            background-color: #25d366; color: white; text-decoration: none;
+            padding: 15px 30px; border-radius: 50px; font-size: 18px; font-weight: bold;
+            animation: vibrar 3s ease-in-out infinite;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+        }
+        @keyframes vibrar {
+            0%, 85%, 100% { transform: rotate(0deg); }
+            87% { transform: rotate(-3deg); }
+            89% { transform: rotate(3deg); }
+            91% { transform: rotate(-3deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero-header">
+        <h1>REAUTO+</h1>
+        <p>Lleva tu vehículo al siguiente nivel con nuestras membresías premium.</p>
+    </header>
+
+    <section class="section-video">
+        <h2>¿Qué ganas con Reauto+?</h2>
+        <div class="video-responsive">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video de Reauto" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <div class="whatsapp-container">
+        <a href="https://wa.me/5355555555" class="btn-whatsapp" target="_blank">
+            Suscribirse vía WhatsApp
+        </a>
+    </div>
+
+</body>
+</html>
