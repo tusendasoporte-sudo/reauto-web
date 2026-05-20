@@ -282,6 +282,63 @@
       </iframe>
     </div>
   </section>
+  
+<div class="whatsapp-chat-container">
+    
+    <div class="whatsapp-chat-window" id="whatsapp-chat-window">
+      <div class="chat-header">
+        <div class="chat-header-info">
+          <i class="fab fa-whatsapp"></i>
+          <span>REAUTO+ Soporte</span>
+        </div>
+        <button class="close-chat" onclick="toggleChat()">×</button>
+      </div>
+      
+      <div class="chat-body">
+        <div class="chat-message-bot">
+          ¡Hola! 👋 ¿En qué podemos ayudarte con los servicios de REAUTO+?
+        </div>
+      </div>
+      
+      <div class="chat-footer">
+        <input type="text" id="chat-input" value="Me interesa los servicios de reauto" placeholder="Escribe tu mensaje...">
+        <button class="send-btn" onclick="sendWhatsAppMessage()">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
 
+    <button class="whatsapp-chat-bubble" onclick="toggleChat()">
+      <i class="fab fa-whatsapp"></i>
+    </button>
+
+  </div>
+
+  <script>
+    function toggleChat() {
+      var chatWindow = document.getElementById('whatsapp-chat-window');
+      if (chatWindow.style.display === 'none' || chatWindow.style.display === '') {
+        chatWindow.style.display = 'flex';
+      } else {
+        chatWindow.style.display = 'none';
+      }
+    }
+
+    function sendWhatsAppMessage() {
+      // Tomamos el texto que está en la caja de input
+      var input = document.getElementById('chat-input').value;
+      var numero = '13068006341'; // Tu número
+      
+      // Codificamos el texto para que la URL sea válida
+      var textoCodificado = encodeURIComponent(input);
+      var url = 'https://wa.me/' + numero + '?text=' + textoCodificado;
+      
+      // Abre WhatsApp en una nueva pestaña
+      window.open(url, '_blank');
+      
+      // Cierra la ventanita del chat web después de enviar
+      toggleChat();
+    }
+  </script>
 </body>
 </html>
