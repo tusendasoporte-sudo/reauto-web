@@ -63,6 +63,49 @@
     .btn-outline { border: 2px solid var(--primary-blue); color: var(--primary-blue); background: transparent; }
     .btn-outline:hover { background: var(--primary-blue); color: black; }
 
+    /* ESTILOS DEL BOTÓN DE WHATSAPP */
+    .contenedor-whatsapp {
+        text-align: center;
+        width: 100%;
+        margin-top: 30px; /* Separación con los botones de arriba */
+        position: relative;
+        z-index: 10; /* Asegura que se pueda hacer clic */
+    }
+    
+    .boton-whatsapp-vibrante {
+        display: inline-block;
+        background-color: #25D366; /* Verde oficial de WhatsApp */
+        color: #ffffff !important;
+        font-family: 'Segoe UI', Roboto, sans-serif;
+        font-weight: bold;
+        font-size: 16px;
+        padding: 12px 28px;
+        border-radius: 50px; /* Diseño de píldora */
+        text-decoration: none;
+        box-shadow: 0px 4px 15px rgba(37, 211, 102, 0.4);
+        
+        /* Animación de vibración */
+        animation: vibrar 2s linear infinite; 
+        transition: all 0.3s ease;
+    }
+
+    .boton-whatsapp-vibrante:hover {
+        background-color: #1EBE57;
+        animation: none; /* Detiene la vibración al poner el mouse */
+        transform: scale(1.05); /* Crece un poquito al pasar el mouse */
+    }
+
+    /* Fotogramas de la vibración */
+    @keyframes vibrar {
+        0% { transform: rotate(0deg); }
+        10% { transform: rotate(-5deg); }
+        20% { transform: rotate(5deg); }
+        30% { transform: rotate(-5deg); }
+        40% { transform: rotate(5deg); }
+        50% { transform: rotate(0deg); }
+        100% { transform: rotate(0deg); }
+    }
+
     /* 2. SECCIÓN: ¿QUÉ GANAS CON REAUTO+? */
     .section-gain { max-width: 1100px; margin: 80px auto 40px auto; padding: 0 20px; }
     .section-title { text-align: center; font-family: 'Orbitron', sans-serif; font-size: 2.5rem; margin-bottom: 50px; }
@@ -165,6 +208,13 @@
       <a href="membresias.html" class="btn-main btn-glow">Ver Planes</a>
       <a href="#ganas" class="btn-main btn-outline">¿Qué gano yo?</a>
     </div>
+
+    <div class="contenedor-whatsapp">
+        <a href="https://wa.me/13068006341?text=me%20interesa%20los%20servicios%20de%20reauto" target="_blank" rel="noopener noreferrer" class="boton-whatsapp-vibrante">
+            <i class="fab fa-whatsapp"></i> Contáctame
+        </a>
+    </div>
+
   </header>
 
   <div class="mini-features">
@@ -234,18 +284,5 @@
   </section>
 
  
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6a0cfde7f47d421c3682d186/1jp1bvk1o';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
 </body>
 </html>
