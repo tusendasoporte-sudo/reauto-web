@@ -63,39 +63,37 @@
     .btn-outline { border: 2px solid var(--primary-blue); color: var(--primary-blue); background: transparent; }
     .btn-outline:hover { background: var(--primary-blue); color: black; }
 
-    /* ESTILOS DEL BOTÓN DE WHATSAPP */
+    /* ESTILOS DEL BOTÓN DE WHATSAPP EN EL HERO */
     .contenedor-whatsapp {
         text-align: center;
         width: 100%;
-        margin-top: 30px; /* Separación con los botones de arriba */
+        margin-top: 30px; 
         position: relative;
-        z-index: 10; /* Asegura que se pueda hacer clic */
+        z-index: 10; 
     }
     
     .boton-whatsapp-vibrante {
         display: inline-block;
-        background-color: #25D366; /* Verde oficial de WhatsApp */
+        background-color: #25D366; 
         color: #ffffff !important;
         font-family: 'Segoe UI', Roboto, sans-serif;
         font-weight: bold;
         font-size: 16px;
         padding: 12px 28px;
-        border-radius: 50px; /* Diseño de píldora */
+        border-radius: 50px; 
         text-decoration: none;
         box-shadow: 0px 4px 15px rgba(37, 211, 102, 0.4);
         
-        /* Animación de vibración */
         animation: vibrar 2s linear infinite; 
         transition: all 0.3s ease;
     }
 
     .boton-whatsapp-vibrante:hover {
         background-color: #1EBE57;
-        animation: none; /* Detiene la vibración al poner el mouse */
-        transform: scale(1.05); /* Crece un poquito al pasar el mouse */
+        animation: none; 
+        transform: scale(1.05); 
     }
 
-    /* Fotogramas de la vibración */
     @keyframes vibrar {
         0% { transform: rotate(0deg); }
         10% { transform: rotate(-5deg); }
@@ -153,7 +151,7 @@
     }
     .video-responsive {
       position: relative;
-      padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+      padding-bottom: 56.25%; 
       height: 0;
       overflow: hidden;
       border-radius: 16px;
@@ -180,7 +178,7 @@
 
     /* 5. CALL TO ACTION FINAL */
     .cta-final {
-      text-align: center; padding: 0px 20px 80px 20px; /* Ajusté el padding superior para que no quede tan separado */
+      text-align: center; padding: 0px 20px 80px 20px; 
       background: transparent;
     }
 
@@ -195,6 +193,149 @@
       .section-title { font-size: 1.8rem; }
       .gain-card { padding: 25px; }
       .section-video { margin: 50px auto; }
+    }
+
+    /* ============================================== */
+    /* ESTILOS DEL WIDGET DE WHATSAPP (A LA IZQUIERDA)*/
+    /* ============================================== */
+    
+    .whatsapp-chat-container {
+      position: fixed; 
+      bottom: 20px;
+      left: 20px; 
+      z-index: 9999;
+      font-family: 'Segoe UI', Roboto, sans-serif;
+    }
+
+    /* La burbuja flotante */
+    .whatsapp-chat-bubble {
+      width: 60px;
+      height: 60px;
+      background-color: #25D366; 
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 35px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+      transition: transform 0.3s;
+      animation: pulse-glow-wa 2s infinite ease-in-out;
+      float: left; 
+    }
+
+    .whatsapp-chat-bubble:hover {
+      transform: scale(1.1);
+    }
+
+    /* La ventana simulada del chat */
+    .whatsapp-chat-window {
+      position: absolute;
+      bottom: 80px;
+      left: 0; 
+      width: 300px;
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+      overflow: hidden;
+      display: none; 
+      flex-direction: column;
+      transform-origin: bottom left; 
+      animation: popIn 0.3s ease;
+    }
+
+    .chat-header {
+      background-color: #075E54;
+      color: white;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chat-header-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .close-chat {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .chat-body {
+      padding: 20px;
+      background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png'); 
+      height: 150px;
+      overflow-y: auto;
+    }
+
+    .chat-message-bot {
+      background-color: #ffffff;
+      color: #303030;
+      padding: 10px 15px;
+      border-radius: 0 10px 10px 10px;
+      font-size: 14px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      width: fit-content;
+      max-width: 85%;
+    }
+
+    .chat-footer {
+      padding: 10px;
+      background-color: #f0f0f0;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .chat-footer input {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      border-radius: 20px;
+      outline: none;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .send-btn {
+      background-color: #25D366;
+      color: white;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s;
+    }
+
+    .send-btn:hover {
+      background-color: #1EBE57;
+    }
+
+    /* Animación de entrada de la ventana */
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.5); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Vibración de la burbuja */
+    @keyframes pulse-glow-wa { 
+      0%, 100% { box-shadow: 0 0 10px rgba(37, 211, 102, 0.5); } 
+      50% { box-shadow: 0 0 30px rgba(37, 211, 102, 0.8); } 
     }
   </style>
 </head>
@@ -236,7 +377,7 @@
       <div class="gain-card tool-highlight">
         <i class="fas fa-laptop-code"></i>
         <h3>Herramienta REAUTO+ Incluida</h3>
-        <p>Al adquirir cualquier membresía recibes acceso total a nuestra potente Extensión. Una herramienta nativa diseñada renovar todos tus anuncios las 24h  cómodamente desde tu PC o Android.</p>
+        <p>Al adquirir cualquier membresía recibes acceso total a nuestra potente Extensión. Una herramienta nativa diseñada renovar todos tus anuncios las 24h cómodamente desde tu PC o Android.</p>
       </div>
 
       <div class="gain-card">
@@ -282,8 +423,8 @@
       </iframe>
     </div>
   </section>
-  
-<div class="whatsapp-chat-container">
+
+  <div class="whatsapp-chat-container">
     
     <div class="whatsapp-chat-window" id="whatsapp-chat-window">
       <div class="chat-header">
