@@ -196,13 +196,13 @@
     }
 
     /* ============================================== */
-    /* ESTILOS DEL WIDGET DE WHATSAPP (A LA DERECHA)*/
+    /* ESTILOS DEL WIDGET DE WHATSAPP (A LA DERECHA)  */
     /* ============================================== */
     
     .whatsapp-chat-container {
       position: fixed; 
       bottom: 20px;
-      left: 20px; 
+      right: 20px; /* Alineado a la derecha nuevamente */
       z-index: 9999;
       font-family: 'Segoe UI', Roboto, sans-serif;
     }
@@ -223,7 +223,7 @@
       box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
       transition: transform 0.3s;
       animation: pulse-glow-wa 2s infinite ease-in-out;
-      float: right; 
+      float: right; /* Flotando a la derecha */
     }
 
     .whatsapp-chat-bubble:hover {
@@ -234,7 +234,7 @@
     .whatsapp-chat-window {
       position: absolute;
       bottom: 80px;
-      left: 0; 
+      right: 0; /* Se alinea con el borde derecho de la pantalla */
       width: 300px;
       background-color: #ffffff;
       border-radius: 15px;
@@ -242,7 +242,7 @@
       overflow: hidden;
       display: none; 
       flex-direction: column;
-      transform-origin: bottom left; 
+      transform-origin: bottom right; /* La animación nace desde la derecha */
       animation: popIn 0.3s ease;
     }
 
