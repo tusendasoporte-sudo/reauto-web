@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>REAUTO+ | Tu Negocio en Piloto Automático</title>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap');
 
@@ -16,98 +18,199 @@
       --glass-border: rgba(255, 255, 255, 0.1);
     }
 
-    /* ESTILO BASE */
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      margin: 0; padding: 0; width: 100%;
+      margin: 0;
+      padding: 0;
+      width: 100%;
       background-color: var(--dark-bg);
       font-family: 'Segoe UI', Roboto, sans-serif;
       color: #ffffff;
       overflow-x: hidden;
     }
 
-    /* 1. HERO HEADER */
+    /* HERO */
     .hero-header {
       background: radial-gradient(circle at center, #001f3f 0%, #00050a 100%);
-      padding: 100px 20px; text-align: center;
+      padding: 100px 20px;
+      text-align: center;
       border-bottom: 1px solid rgba(0, 198, 255, 0.2);
-      position: relative; overflow: hidden;
+      position: relative;
+      overflow: hidden;
       font-family: 'Rajdhani', sans-serif;
     }
+
     .hero-header::before {
-      content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-      background-image: linear-gradient(rgba(0, 198, 255, 0.05) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(0, 198, 255, 0.05) 1px, transparent 1px);
-      background-size: 40px 40px; pointer-events: none;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image:
+        linear-gradient(rgba(0, 198, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 198, 255, 0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
     }
 
     .logo-text {
-      font-family: 'Orbitron', sans-serif; font-size: 5rem; font-weight: 700;
-      color: #fff; text-shadow: 0 0 15px var(--primary-blue);
-      letter-spacing: 8px; margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 5rem;
+      font-weight: 700;
+      color: #fff;
+      text-shadow: 0 0 15px var(--primary-blue);
+      letter-spacing: 8px;
+      margin: 0;
     }
-    .plus-symbol { color: var(--primary-blue); font-size: 4rem; vertical-align: super; animation: pulse-glow 2s infinite ease-in-out; }
-    .tagline { font-size: 1.6rem; color: #e0e0e0; font-weight: 300; margin-top: 15px; text-transform: uppercase; letter-spacing: 2px; }
-    .highlight-revolico { color: var(--primary-blue); font-weight: 700; }
-    
-    .hero-buttons { margin-top: 40px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+
+    .plus-symbol {
+      color: var(--primary-blue);
+      font-size: 4rem;
+      vertical-align: super;
+      animation: pulse-glow 2s infinite ease-in-out;
+    }
+
+    .tagline {
+      font-size: 1.6rem;
+      color: #e0e0e0;
+      font-weight: 300;
+      margin-top: 15px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .highlight-revolico {
+      color: var(--primary-blue);
+      font-weight: 700;
+    }
+
+    .hero-buttons {
+      margin-top: 40px;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
     /* BOTONES */
     .btn-main {
-      padding: 15px 35px; border-radius: 50px; font-weight: 700; text-transform: uppercase;
-      text-decoration: none; transition: all 0.3s; font-size: 1rem; letter-spacing: 1px;
+      padding: 15px 35px;
+      border-radius: 50px;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s;
+      font-size: 1rem;
+      letter-spacing: 1px;
     }
-    .btn-glow { background: var(--deep-blue); color: white; box-shadow: 0 0 20px rgba(0, 123, 255, 0.4); }
-    .btn-glow:hover { transform: scale(1.05); box-shadow: 0 0 30px var(--primary-blue); }
-    
-    .btn-outline { border: 2px solid var(--primary-blue); color: var(--primary-blue); background: transparent; }
-    .btn-outline:hover { background: var(--primary-blue); color: black; }
 
-    /* ESTILOS DEL BOTÓN DE WHATSAPP EN EL HERO */
-    .contenedor-whatsapp {
-        text-align: center;
-        width: 100%;
-        margin-top: 30px; 
-        position: relative;
-        z-index: 10; 
+    .btn-glow {
+      background: var(--deep-blue);
+      color: white;
+      box-shadow: 0 0 20px rgba(0, 123, 255, 0.4);
     }
-    
+
+    .btn-glow:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px var(--primary-blue);
+    }
+
+    .btn-outline {
+      border: 2px solid var(--primary-blue);
+      color: var(--primary-blue);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: var(--primary-blue);
+      color: black;
+    }
+
+    /* BOTÓN WHATSAPP HERO */
+    .contenedor-whatsapp {
+      text-align: center;
+      width: 100%;
+      margin-top: 30px;
+      position: relative;
+      z-index: 10;
+    }
+
     .boton-whatsapp-vibrante {
-        display: inline-block;
-        background-color: #25D366; 
-        color: #ffffff !important;
-        font-family: 'Segoe UI', Roboto, sans-serif;
-        font-weight: bold;
-        font-size: 16px;
-        padding: 12px 28px;
-        border-radius: 50px; 
-        text-decoration: none;
-        box-shadow: 0px 4px 15px rgba(37, 211, 102, 0.4);
-        
-        animation: vibrar 2s linear infinite; 
-        transition: all 0.3s ease;
+      display: inline-block;
+      background-color: #25D366;
+      color: #ffffff !important;
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 12px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0px 4px 15px rgba(37, 211, 102, 0.4);
+      animation: vibrar 2s linear infinite;
+      transition: all 0.3s ease;
     }
 
     .boton-whatsapp-vibrante:hover {
-        background-color: #1EBE57;
-        animation: none; 
-        transform: scale(1.05); 
+      background-color: #1EBE57;
+      animation: none;
+      transform: scale(1.05);
     }
 
     @keyframes vibrar {
-        0% { transform: rotate(0deg); }
-        10% { transform: rotate(-5deg); }
-        20% { transform: rotate(5deg); }
-        30% { transform: rotate(-5deg); }
-        40% { transform: rotate(5deg); }
-        50% { transform: rotate(0deg); }
-        100% { transform: rotate(0deg); }
+      0% { transform: rotate(0deg); }
+      10% { transform: rotate(-5deg); }
+      20% { transform: rotate(5deg); }
+      30% { transform: rotate(-5deg); }
+      40% { transform: rotate(5deg); }
+      50% { transform: rotate(0deg); }
+      100% { transform: rotate(0deg); }
     }
 
-    /* 2. SECCIÓN: ¿QUÉ GANAS CON REAUTO+? */
-    .section-gain { max-width: 1100px; margin: 80px auto 40px auto; padding: 0 20px; }
-    .section-title { text-align: center; font-family: 'Orbitron', sans-serif; font-size: 2.5rem; margin-bottom: 50px; }
-    .section-title span { color: var(--primary-blue); }
+    /* FEATURES */
+    .mini-features {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin: 60px 0;
+      padding: 30px;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .mini-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #cbd5e1;
+      font-weight: 500;
+    }
+
+    .mini-item span {
+      color: var(--primary-blue);
+      font-size: 1.5rem;
+    }
+
+    /* SECCIONES */
+    .section-gain {
+      max-width: 1100px;
+      margin: 80px auto 40px auto;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+    }
+
+    .section-title span {
+      color: var(--primary-blue);
+    }
 
     .gain-grid {
       display: grid;
@@ -125,33 +228,54 @@
       position: relative;
       overflow: hidden;
     }
+
     .gain-card:hover {
       border-color: var(--primary-blue);
       background: rgba(0, 198, 255, 0.05);
       transform: translateY(-10px);
     }
+
     .gain-card i {
-      font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 20px; display: block;
+      font-size: 2.5rem;
+      color: var(--primary-blue);
+      margin-bottom: 20px;
+      display: block;
       filter: drop-shadow(0 0 10px var(--primary-blue));
     }
-    .gain-card h3 { font-size: 1.4rem; margin-bottom: 15px; color: #fff; }
-    .gain-card p { color: #94a3b8; line-height: 1.6; font-size: 1rem; margin: 0; }
+
+    .gain-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+
+    .gain-card p {
+      color: #94a3b8;
+      line-height: 1.6;
+      font-size: 1rem;
+      margin: 0;
+    }
 
     .gain-card.tool-highlight {
       border: 1px solid rgba(0, 198, 255, 0.4);
-      background: linear-gradient(135deg, rgba(0, 31, 63, 0.6) 0%, rgba(0, 5, 10, 0.9) 100%);
+      background: linear-gradient(
+        135deg,
+        rgba(0, 31, 63, 0.6) 0%,
+        rgba(0, 5, 10, 0.9) 100%
+      );
     }
 
-    /* 3. SECCIÓN DE VIDEO DE YOUTUBE RESPONSIVA */
+    /* VIDEO */
     .section-video {
       max-width: 800px;
       margin: 80px auto;
       padding: 0 20px;
       text-align: center;
     }
+
     .video-responsive {
       position: relative;
-      padding-bottom: 56.25%; 
+      padding-bottom: 56.25%;
       height: 0;
       overflow: hidden;
       border-radius: 16px;
@@ -159,6 +283,7 @@
       box-shadow: 0 0 25px rgba(0, 198, 255, 0.15);
       background-color: #000;
     }
+
     .video-responsive iframe {
       position: absolute;
       top: 0;
@@ -168,318 +293,228 @@
       border: 0;
     }
 
-    /* 4. CARACTERÍSTICAS TÉCNICAS */
-    .mini-features {
-      display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;
-      margin: 60px 0; padding: 30px; background: rgba(255,255,255,0.02);
-    }
-    .mini-item { display: flex; align-items: center; gap: 10px; color: #cbd5e1; font-weight: 500; }
-    .mini-item span { color: var(--primary-blue); font-size: 1.5rem; }
-
-    /* 5. CALL TO ACTION FINAL */
+    /* CTA */
     .cta-final {
-      text-align: center; padding: 0px 20px 80px 20px; 
+      text-align: center;
+      padding: 0px 20px 80px 20px;
       background: transparent;
     }
 
     /* ANIMACIONES */
-    @keyframes pulse-glow { 0%, 100% { text-shadow: 0 0 10px var(--primary-blue); opacity: 1; } 50% { text-shadow: 0 0 30px var(--primary-blue); opacity: 0.8; } }
+    @keyframes pulse-glow {
+      0%, 100% {
+        text-shadow: 0 0 10px var(--primary-blue);
+        opacity: 1;
+      }
+      50% {
+        text-shadow: 0 0 30px var(--primary-blue);
+        opacity: 0.8;
+      }
+    }
 
-    /* RESPONSIVO */
+    /* RESPONSIVE */
     @media (max-width: 768px) {
-      .logo-text { font-size: 3rem; letter-spacing: 4px; }
-      .plus-symbol { font-size: 2.5rem; }
-      .tagline { font-size: 1.1rem; }
-      .section-title { font-size: 1.8rem; }
-      .gain-card { padding: 25px; }
-      .section-video { margin: 50px auto; }
-    }
 
-    /* ============================================== */
-    /* ESTILOS DEL WIDGET DE WHATSAPP (A LA DERECHA)  */
-    /* ============================================== */
-    
-    .whatsapp-chat-container {
-      position: fixed; 
-      bottom: 20px;
-      right: 20px; /* Alineado a la derecha nuevamente */
-      z-index: 9999;
-      font-family: 'Segoe UI', Roboto, sans-serif;
-    }
+      .logo-text {
+        font-size: 3rem;
+        letter-spacing: 4px;
+      }
 
-    /* La burbuja flotante */
-    .whatsapp-chat-bubble {
-      width: 60px;
-      height: 60px;
-      background-color: #25D366; 
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 35px;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-      transition: transform 0.3s;
-      animation: pulse-glow-wa 2s infinite ease-in-out;
-      float: right; /* Flotando a la derecha */
-    }
+      .plus-symbol {
+        font-size: 2.5rem;
+      }
 
-    .whatsapp-chat-bubble:hover {
-      transform: scale(1.1);
-    }
+      .tagline {
+        font-size: 1.1rem;
+      }
 
-    /* La ventana simulada del chat */
-    .whatsapp-chat-window {
-      position: absolute;
-      bottom: 80px;
-      right: 0; /* Se alinea con el borde derecho de la pantalla */
-      width: 300px;
-      background-color: #ffffff;
-      border-radius: 15px;
-      box-shadow: 0 5px 25px rgba(0,0,0,0.5);
-      overflow: hidden;
-      display: none; 
-      flex-direction: column;
-      transform-origin: bottom right; /* La animación nace desde la derecha */
-      animation: popIn 0.3s ease;
-    }
+      .section-title {
+        font-size: 1.8rem;
+      }
 
-    .chat-header {
-      background-color: #075E54;
-      color: white;
-      padding: 15px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+      .gain-card {
+        padding: 25px;
+      }
 
-    .chat-header-info {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: bold;
-      font-size: 16px;
-    }
-
-    .close-chat {
-      background: none;
-      border: none;
-      color: white;
-      font-size: 24px;
-      cursor: pointer;
-      line-height: 1;
-    }
-
-    .chat-body {
-      padding: 20px;
-      background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png'); 
-      height: 150px;
-      overflow-y: auto;
-    }
-
-    .chat-message-bot {
-      background-color: #ffffff;
-      color: #303030;
-      padding: 10px 15px;
-      border-radius: 0 10px 10px 10px;
-      font-size: 14px;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-      width: fit-content;
-      max-width: 85%;
-    }
-
-    .chat-footer {
-      padding: 10px;
-      background-color: #f0f0f0;
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
-
-    .chat-footer input {
-      flex: 1;
-      padding: 12px;
-      border: none;
-      border-radius: 20px;
-      outline: none;
-      font-size: 14px;
-      color: #333;
-    }
-
-    .send-btn {
-      background-color: #25D366;
-      color: white;
-      border: none;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: background-color 0.3s;
-    }
-
-    .send-btn:hover {
-      background-color: #1EBE57;
-    }
-
-    /* Animación de entrada de la ventana */
-    @keyframes popIn {
-      from { opacity: 0; transform: scale(0.5); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    /* Vibración de la burbuja */
-    @keyframes pulse-glow-wa { 
-      0%, 100% { box-shadow: 0 0 10px rgba(37, 211, 102, 0.5); } 
-      50% { box-shadow: 0 0 30px rgba(37, 211, 102, 0.8); } 
+      .section-video {
+        margin: 50px auto;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <header class="hero-header">
-    <h1 class="logo-text">REAUTO<span class="plus-symbol">+</span></h1>
-    <p class="tagline">Domina <span class="highlight-revolico">Revolico</span> en piloto automático</p>
-    
+
+    <h1 class="logo-text">
+      REAUTO<span class="plus-symbol">+</span>
+    </h1>
+
+    <p class="tagline">
+      Domina <span class="highlight-revolico">Revolico</span> en piloto automático
+    </p>
+
     <div class="hero-buttons">
-      <a href="membresias.html" class="btn-main btn-glow">Ver Planes</a>
-      <a href="#ganas" class="btn-main btn-outline">¿Qué gano yo?</a>
+      <a href="membresias.html" class="btn-main btn-glow">
+        Ver Planes
+      </a>
+
+      <a href="#ganas" class="btn-main btn-outline">
+        ¿Qué gano yo?
+      </a>
     </div>
 
     <div class="contenedor-whatsapp">
-        <a href="https://wa.me/13068006341?text=me%20interesa%20los%20servicios%20de%20reauto" target="_blank" rel="noopener noreferrer" class="boton-whatsapp-vibrante">
-            <i class="fab fa-whatsapp"></i> Contáctame
-        </a>
+      <a
+        href="https://wa.me/13068006341?text=me%20interesa%20los%20servicios%20de%20reauto"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="boton-whatsapp-vibrante">
+
+        <i class="fab fa-whatsapp"></i>
+        Contáctame
+      </a>
     </div>
 
   </header>
 
+  <!-- FEATURES -->
   <div class="mini-features">
-    <div class="mini-item"><span><i class="fas fa-sync-alt"></i></span> Renovación 24/7</div>
-    <div class="mini-item"><span><i class="fas fa-bolt"></i></span> Autonomía Total</div>
-    <div class="mini-item"><span><i class="fas fa-cubes"></i></span> Software Incluido</div>
+
+    <div class="mini-item">
+      <span><i class="fas fa-sync-alt"></i></span>
+      Renovación 24/7
+    </div>
+
+    <div class="mini-item">
+      <span><i class="fas fa-mobile-alt"></i></span>
+      Compatible Android / PC
+    </div>
+
+    <div class="mini-item">
+      <span><i class="fas fa-bolt"></i></span>
+      Autonomía Total
+    </div>
+
+    <div class="mini-item">
+      <span><i class="fas fa-cubes"></i></span>
+      Software Incluido
+    </div>
+
   </div>
 
+  <!-- CTA -->
   <section class="cta-final">
-    <a href="https://wa.me/13068006341?text=Hola%20Quiero%20mi%20Prueba%20Gratis" target="_blank" class="btn-main btn-glow" style="font-size: 1.4rem;">
-      <i class="fab fa-whatsapp"></i> Prueba Gratis
+
+    <a
+      href="https://wa.me/13068006341?text=Hola%20Quiero%20mi%20Prueba%20Gratis"
+      target="_blank"
+      class="btn-main btn-glow"
+      style="font-size: 1.4rem;">
+
+      <i class="fab fa-whatsapp"></i>
+      Prueba Gratis
     </a>
+
   </section>
 
+  <!-- BENEFICIOS -->
   <section class="section-gain" id="ganas">
-    <h2 class="section-title">¿Qué ganas con <span>REAUTO+</span>?</h2>
-    
+
+    <h2 class="section-title">
+      ¿Qué ganas con <span>REAUTO+</span>?
+    </h2>
+
     <div class="gain-grid">
+
       <div class="gain-card tool-highlight">
         <i class="fas fa-laptop-code"></i>
         <h3>Herramienta REAUTO+ Incluida</h3>
-        <p>Al adquirir cualquier membresía recibes acceso total a nuestra potente Extensión. Una herramienta nativa diseñada renovar todos tus anuncios las 24h cómodamente desde tu PC o Android.</p>
+
+        <p>
+          Al adquirir cualquier membresía recibes acceso total a nuestra potente
+          Extensión. Una herramienta nativa diseñada renovar todos tus anuncios
+          las 24h cómodamente desde tu PC o Android.
+        </p>
       </div>
 
       <div class="gain-card">
         <i class="fas fa-trophy"></i>
         <h3>Posicionamiento Elite</h3>
-        <p>Tu anuncio siempre en el primer lugar. Renovamos tus anuncios en intervalos estratégicos para que seas lo primero que vean tus clientes.</p>
+
+        <p>
+          Tu anuncio siempre en el primer lugar. Renovamos tus anuncios en
+          intervalos estratégicos para que seas lo primero que vean tus clientes.
+        </p>
       </div>
 
       <div class="gain-card">
         <i class="fas fa-battery-full"></i>
         <h3>Autonomía Real</h3>
-        <p>¿Sin luz o sin internet? No importa. Nuestro sistema en la nube sigue trabajando por ti, publicando puntualmente sin detenerse jamás.</p>
+
+        <p>
+          ¿Sin luz o sin internet? No importa. Nuestro sistema en la nube sigue
+          trabajando por ti, publicando puntualmente sin detenerse jamás.
+        </p>
       </div>
 
       <div class="gain-card">
         <i class="fas fa-chart-line"></i>
         <h3>Tráfico Multiplicado</h3>
-        <p>Gestionamos de 50 a 120 anuncios diarios automatizados creados por nosotros para ti . Multiplicas exponencialmente tus probabilidades de cerrar ventas cada día.</p>
+
+        <p>
+          Gestionamos de 50 a 120 anuncios diarios automatizados creados por
+          nosotros para ti. Multiplicas exponencialmente tus probabilidades de
+          cerrar ventas cada día.
+        </p>
       </div>
 
       <div class="gain-card">
         <i class="fas fa-hand-holding-usd"></i>
         <h3>Ganancia 100% Directa</h3>
-        <p>Cero comisiones. Tus datos, tu teléfono y tu dinero. El cliente te contacta directo a ti, tú cierras el trato y el beneficio económico es todo tuyo.</p>
+
+        <p>
+          Cero comisiones. Tus datos, tu teléfono y tu dinero. El cliente te
+          contacta directo a ti, tú cierras el trato y el beneficio económico es
+          todo tuyo.
+        </p>
       </div>
 
       <div class="gain-card">
         <i class="fas fa-eye"></i>
         <h3>Transparencia Comercial</h3>
-        <p>Monitorea vistas y estadísticas de tus publicaciones en tiempo real directamente en la plataforma. Sabrás con certeza el rendimiento de tu inversión.</p>
+
+        <p>
+          Monitorea vistas y estadísticas de tus publicaciones en tiempo real
+          directamente en la plataforma. Sabrás con certeza el rendimiento de tu
+          inversión.
+        </p>
       </div>
+
     </div>
+
   </section>
 
+  <!-- VIDEO -->
   <section class="section-video">
-    <h2 class="section-title">Descubre cómo funciona <span>REAUTO+</span></h2>
+
+    <h2 class="section-title">
+      Descubre cómo funciona <span>REAUTO+</span>
+    </h2>
+
     <div class="video-responsive">
-      <iframe 
-        src="https://www.youtube.com/embed/ANz8Z1zfTlk" 
-        title="Demostración REAUTO+" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+
+      <iframe
+        src="https://www.youtube.com/embed/ANz8Z1zfTlk"
+        title="Demostración REAUTO+"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen>
       </iframe>
+
     </div>
+
   </section>
 
-  <div class="whatsapp-chat-container">
-    
-    <div class="whatsapp-chat-window" id="whatsapp-chat-window">
-      <div class="chat-header">
-        <div class="chat-header-info">
-          <i class="fab fa-whatsapp"></i>
-          <span>REAUTO+ Soporte</span>
-        </div>
-        <button class="close-chat" onclick="toggleChat()">×</button>
-      </div>
-      
-      <div class="chat-body">
-        <div class="chat-message-bot">
-          ¡Hola! 👋 ¿En qué podemos ayudarte con los servicios de REAUTO+?
-        </div>
-      </div>
-      
-      <div class="chat-footer">
-        <input type="text" id="chat-input" value="Me interesa los servicios de reauto" placeholder="Escribe tu mensaje...">
-        <button class="send-btn" onclick="sendWhatsAppMessage()">
-          <i class="fas fa-paper-plane"></i>
-        </button>
-      </div>
-    </div>
-
-    <button class="whatsapp-chat-bubble" onclick="toggleChat()">
-      <i class="fab fa-whatsapp"></i>
-    </button>
-
-  </div>
-
-  <script>
-    function toggleChat() {
-      var chatWindow = document.getElementById('whatsapp-chat-window');
-      if (chatWindow.style.display === 'none' || chatWindow.style.display === '') {
-        chatWindow.style.display = 'flex';
-      } else {
-        chatWindow.style.display = 'none';
-      }
-    }
-
-    function sendWhatsAppMessage() {
-      // Tomamos el texto que está en la caja de input
-      var input = document.getElementById('chat-input').value;
-      var numero = '13068006341'; // Tu número
-      
-      // Codificamos el texto para que la URL sea válida
-      var textoCodificado = encodeURIComponent(input);
-      var url = 'https://wa.me/' + numero + '?text=' + textoCodificado;
-      
-      // Abre WhatsApp en una nueva pestaña
-      window.open(url, '_blank');
-      
-      // Cierra la ventanita del chat web después de enviar
-      toggleChat();
-    }
-  </script>
 </body>
 </html>
