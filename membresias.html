@@ -4,90 +4,237 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Membresías REAUTO+ | Elige tu Plan</title>
+
   <style>
     :root {
       --primary: #007bff;
       --secondary: #003366;
-      --dark-bg: #0b1329; 
+      --dark-bg: #0b1329;
       --text-light: #f8fafc;
       --text-dark: #333333;
     }
 
-    html, body {
-      margin: 0; padding: 0; width: 100%;
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
       font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       background-color: #f1f5f9;
       color: var(--text-dark);
       overflow-x: hidden;
     }
 
-    /* ENCABEZADO DE LA SUBPÁGINA */
+    /* HERO */
     .hero-premium {
-      position: relative; width: 100%;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      text-align: center; box-sizing: border-box; padding: 60px 20px;
+      position: relative;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-sizing: border-box;
+      padding: 60px 20px;
       background: linear-gradient(135deg, #0b1329 0%, #001f3f 100%);
     }
 
     .premium-badge {
-      background: rgba(255, 255, 255, 0.07); color: #38bdf8; padding: 6px 18px;
-      border-radius: 30px; font-size: 0.85rem; font-weight: 700; letter-spacing: 1.5px;
-      text-transform: uppercase; margin-bottom: 20px; display: inline-block;
+      background: rgba(255, 255, 255, 0.07);
+      color: #38bdf8;
+      padding: 6px 18px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      display: inline-block;
       border: 1px solid rgba(56, 189, 248, 0.2);
     }
 
-    .hero-premium h1 { font-size: 2.8rem; font-weight: 800; margin: 0 0 15px 0; color: #ffffff; line-height: 1.2; }
-    .hero-premium h1 span { background: linear-gradient(to right, #38bdf8, #007bff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .hero-premium p { color: #94a3b8; font-size: 1.1rem; max-width: 650px; margin: 0 auto; line-height: 1.5; }
+    .hero-premium h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin: 0 0 15px 0;
+      color: #ffffff;
+      line-height: 1.2;
+    }
 
-    /* CONTENEDOR DE TABLAS DE PRECIOS */
+    .hero-premium h1 span {
+      background: linear-gradient(to right, #38bdf8, #007bff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-premium p {
+      color: #94a3b8;
+      font-size: 1.1rem;
+      max-width: 650px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    /* PRICING */
     .pricing-container {
-      max-width: 1100px; margin: -30px auto 60px auto; padding: 0 20px;
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;
-      position: relative; z-index: 10;
+      max-width: 1400px;
+      margin: -30px auto 60px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      position: relative;
+      z-index: 10;
     }
 
     .price-card {
-      background: #ffffff; border-radius: 16px; overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08); display: flex; flex-direction: column;
-      border-top: 6px solid var(--primary); transition: transform 0.3s ease;
+      background: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      border-top: 6px solid var(--primary);
+      transition: transform 0.3s ease;
     }
-    .price-card:hover { transform: translateY(-5px); }
-    .price-card.featured { border-top-color: #0056b3; transform: scale(1.02); }
-    .price-card.featured:hover { transform: translateY(-5px) scale(1.02); }
 
-    /* Encabezado de cada tarjeta */
+    .price-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .price-card.featured {
+      border-top-color: #0056b3;
+      transform: scale(1.02);
+    }
+
+    .price-card.featured:hover {
+      transform: translateY(-5px) scale(1.02);
+    }
+
+    /* HEADER TARJETAS */
     .card-header {
       background: linear-gradient(135deg, var(--secondary), var(--primary));
-      color: white; padding: 25px 20px; text-align: center;
+      color: white;
+      padding: 25px 20px;
+      text-align: center;
     }
-    .card-header h2 { margin: 0; font-size: 1.5rem; text-transform: uppercase; letter-spacing: 1px; }
-    .card-header p { margin: 5px 0 0 0; font-size: 0.85rem; opacity: 0.8; font-style: italic; }
 
-    /* Cuerpo de la tarjeta */
-    .card-body { padding: 30px 25px; flex-grow: 1; display: flex; flex-direction: column; }
-    .price-box { text-align: center; margin-bottom: 25px; }
-    .price-box .amount { font-size: 3rem; font-weight: 800; color: var(--secondary); }
-    .price-box .currency { font-size: 0.9rem; color: #666; font-weight: 600; }
+    .card-header h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
 
-    /* Listas */
-    .features-list { list-style: none; padding: 0; margin: 0 0 30px 0; }
-    .features-list li { margin-bottom: 14px; font-size: 0.95rem; color: #475569; display: flex; align-items: flex-start; line-height: 1.4; }
-    .features-list li::before { content: "✅"; margin-right: 10px; font-size: 1rem; flex-shrink: 0; }
-    .features-list li.alert-info { background-color: #f0fdf4; padding: 8px 12px; border-radius: 8px; border-left: 3px solid #22c55e; font-weight: 600; color: #166534; }
-    .features-list li.alert-info::before { content: "✨"; }
+    .card-header p {
+      margin: 5px 0 0 0;
+      font-size: 0.85rem;
+      opacity: 0.8;
+      font-style: italic;
+    }
 
-    /* BOTONES WHATSAPP ADAPTADOS DE TU CÓDIGO */
-    .whatsapp-container { display: flex; justify-content: center; align-items: center; padding-top: auto; margin-top: auto; width: 100%; }
+    /* BODY */
+    .card-body {
+      padding: 30px 25px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .price-box {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .price-box .amount {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--secondary);
+    }
+
+    .price-box .currency {
+      font-size: 0.9rem;
+      color: #666;
+      font-weight: 600;
+    }
+
+    /* FEATURES */
+    .features-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 30px 0;
+    }
+
+    .features-list li {
+      margin-bottom: 14px;
+      font-size: 0.95rem;
+      color: #475569;
+      display: flex;
+      align-items: flex-start;
+      line-height: 1.4;
+    }
+
+    .features-list li::before {
+      content: "✅";
+      margin-right: 10px;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .features-list li.alert-info {
+      background-color: #f0fdf4;
+      padding: 8px 12px;
+      border-radius: 8px;
+      border-left: 3px solid #22c55e;
+      font-weight: 600;
+      color: #166534;
+    }
+
+    .features-list li.alert-info::before {
+      content: "✨";
+    }
+
+    /* BOTONES */
+    .whatsapp-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: auto;
+      margin-top: auto;
+      width: 100%;
+    }
+
     .btn-whatsapp {
-      display: inline-flex; align-items: center; justify-content: center;
-      background-color: #25d366; color: white; text-decoration: none;
-      padding: 12px 24px; border-radius: 50px; font-size: 16px; font-weight: 600;
-      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2); transition: all 0.3s ease; width: 100%; text-align: center;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #25d366;
+      color: white;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+      transition: all 0.3s ease;
+      width: 100%;
+      text-align: center;
       animation: vibrar 3s ease-in-out infinite;
     }
-    .whatsapp-icon { width: 20px; height: 20px; margin-right: 8px; fill: white; }
-    .btn-whatsapp:hover { background-color: #128c7e; transform: scale(1.03); box-shadow: 0 6px 18px rgba(37, 211, 102, 0.3); animation-play-state: paused; }
+
+    .btn-whatsapp:hover {
+      background-color: #128c7e;
+      transform: scale(1.03);
+      box-shadow: 0 6px 18px rgba(37, 211, 102, 0.3);
+      animation-play-state: paused;
+    }
+
+    .whatsapp-icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+      fill: white;
+    }
 
     @keyframes vibrar {
       0%, 85%, 100% { transform: rotate(0deg); }
@@ -98,113 +245,321 @@
       95% { transform: rotate(0deg); }
     }
 
-    /* ENLACE PARA VOLVER ATRÁS */
-    .back-home { text-align: center; margin-bottom: 5px; }
-    .back-home a { color: var(--primary); text-decoration: none; font-weight: 600; font-size: 1rem; }
-    .back-home a:hover { text-decoration: underline; }
+    /* BACK */
+    .back-home {
+      text-align: center;
+      margin-bottom: 25px;
+    }
 
-    /* AJUSTES MÓVILES */
+    .back-home a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .back-home a:hover {
+      text-decoration: underline;
+    }
+
+    /* RESPONSIVE */
     @media (max-width: 768px) {
-      .hero-premium h1 { font-size: 1.8rem; }
-      .hero-premium p { font-size: 0.95rem; }
-      .pricing-container { margin-top: 20px; grid-template-columns: 1fr; }
-      .price-card.featured { transform: scale(1); }
+
+      .hero-premium h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero-premium p {
+        font-size: 0.95rem;
+      }
+
+      .pricing-container {
+        margin-top: 20px;
+        grid-template-columns: 1fr;
+      }
+
+      .price-card.featured {
+        transform: scale(1);
+      }
     }
   </style>
 </head>
+
 <body>
 
-    <section class="hero-premium">
-        <div class="premium-badge">Membresías Exclusivas</div>
-        <h1>Multiplica tus Ventas con <span>Potencia Absoluta</span></h1>
-        <p>Elige el motor de automatización perfecto para tu negocio. Domina las publicaciones diarias, optimiza tus tiempos y haz que tus clientes te encuentren primero.</p>
-    </section>
+  <!-- HERO -->
+  <section class="hero-premium">
 
-    <div class="pricing-container">
-        
-        <div class="price-card">
-            <div class="card-header">
-                <h2>Plan Básico</h2>
-                <p>Ideal para comenzar a automatizar tus ventas</p>
-            </div>
-            <div class="card-body">
-                <div class="price-box">
-                    <span class="amount">25</span>
-                    <span class="currency">USD / CUP al mes</span>
-                </div>
-                <ul class="features-list">
-                    <li><strong>Licencia REAUTO+ (30 días):</strong> Obtén nuestra extensión automatizada para publicar tus propios anuncios cuando quieras.</li>
-                    <li><strong>50 Anuncios Diarios Gestionados:</strong> Nos encargamos de publicar 50 anuncios adicionales cada día con tu contenido preferido.</li>
-                    <li><strong>Publicación Estratégica:</strong> Anuncios personalizados en las categorías de Revolico que tú elijas para maximizar el alcance.</li>
-                    <li><strong>Ventas Directas y Sin Comisiones:</strong> Tus fotos, tu descripción y tu teléfono. Los clientes te contactan directamente a ti.</li>
-                    <li class="alert-info"><strong>Transparencia Total:</strong> Tendrás acceso al perfil de Revolico para monitorear vistas e interacciones en tiempo real.</li>
-                </ul>
-                <div class="whatsapp-container">
-                    <a href="https://api.whatsapp.com/send/?phone=13068006341&text=Me+interesa+el+plan+Basico&type=phone_number&app_absent=0" class="btn-whatsapp" target="_blank">
-                        <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.2-3.2-5.6-.3-8.6 2.5-11.3 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.3 3.7-5.5 5.5-9.3 1.9-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.3 5.7 23.5 9.2 31.6 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.5 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
-                        Básico
-                    </a>
-                </div>
-            </div>
+    <div class="premium-badge">
+      Membresías Exclusivas
+    </div>
+
+    <h1>
+      Multiplica tus Ventas con
+      <span>Potencia Absoluta</span>
+    </h1>
+
+    <p>
+      Elige el motor de automatización perfecto para tu negocio.
+      Domina las publicaciones diarias, optimiza tus tiempos y haz
+      que tus clientes te encuentren primero.
+    </p>
+
+  </section>
+
+  <!-- PRICING -->
+  <div class="pricing-container">
+
+    <!-- CORE -->
+    <div class="price-card">
+
+      <div class="card-header">
+        <h2>Plan Core</h2>
+        <p>Ideal para cuentas adicionales y máxima exposición</p>
+      </div>
+
+      <div class="card-body">
+
+        <div class="price-box">
+          <span class="amount">20</span>
+          <span class="currency">USD / CUP al mes</span>
         </div>
 
-        <div class="price-card featured">
-            <div class="card-header">
-                <h2>Plan Platinum</h2>
-                <p>Ideal para comenzar a automatizar tus ventas</p>
-            </div>
-            <div class="card-body">
-                <div class="price-box">
-                    <span class="amount">35</span>
-                    <span class="currency">USD / CUP al mes</span>
-                </div>
-                <ul class="features-list">
-                    <li><strong>Licencia REAUTO+ (30 días):</strong> Obtén nuestra extensión automatizada para publicar tus propios anuncios cuando quieras.</li>
-                    <li><strong>80 Anuncios Diarios Gestionados:</strong> Nos encargamos de publicar 80 anuncios adicionales cada día con tu contenido preferido.</li>
-                    <li><strong>Publicación Estratégica:</strong> Anuncios personalizados en las categorías de Revolico que tú elijas para maximizar el alcance.</li>
-                    <li><strong>Ventas Directas y Sin Comisiones:</strong> Tus fotos, tu descripción y tu teléfono. Los clientes te contactan directamente a ti.</li>
-                    <li class="alert-info"><strong>Transparencia Total:</strong> Tendrás acceso al perfil de Revolico para monitorear vistas e interacciones en tiempo real.</li>
-                </ul>
-                <div class="whatsapp-container">
-                    <a href="https://api.whatsapp.com/send/?phone=13068006341&text=Me+interesa+el+plan+Platinum&type=phone_number&app_absent=0" class="btn-whatsapp" target="_blank">
-                        <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.2-3.2-5.6-.3-8.6 2.5-11.3 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.3 3.7-5.5 5.5-9.3 1.9-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.3 5.7 23.5 9.2 31.6 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.5 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
-                        Platinum
-                    </a>
-                </div>
-            </div>
+        <ul class="features-list">
+
+          <li>
+            <strong>Licencia REAUTO+ (30 días):</strong>
+            Obtén acceso completo a nuestra extensión automatizada.
+          </li>
+
+          <li>
+            <strong>200 Anuncios Diarios:</strong>
+            Publicamos hasta 200 anuncios diarios en una cuenta administrada por nosotros.
+          </li>
+
+          <li>
+            <strong>Publicación 24 Horas:</strong>
+            Tu cuenta se mantiene activa todo el día automáticamente.
+          </li>
+
+          <li>
+            <strong>Mayor Visibilidad:</strong>
+            Dividimos estratégicamente la actividad de la cuenta en diferentes horarios.
+          </li>
+
+          <li class="alert-info">
+            <strong>Ideal para más cuentas:</strong>
+            Perfecto para expandir tus ventas usando múltiples perfiles.
+          </li>
+
+        </ul>
+
+        <div class="whatsapp-container">
+
+          <a
+            href="https://api.whatsapp.com/send/?phone=13068006341&text=Me+interesa+el+plan+Core&type=phone_number&app_absent=0"
+            class="btn-whatsapp"
+            target="_blank">
+
+            <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9"/>
+            </svg>
+
+            Core
+          </a>
+
         </div>
 
-        <div class="price-card">
-            <div class="card-header">
-                <h2>Plan Titanium</h2>
-                <p>Ideal para automatizar tus ventas al máximo nivel</p>
-            </div>
-            <div class="card-body">
-                <div class="price-box">
-                    <span class="amount">45</span>
-                    <span class="currency">USD / CUP al mes</span>
-                </div>
-                <ul class="features-list">
-                    <li><strong>Licencia REAUTO+ (30 días):</strong> Obtén nuestra extensión automatizada para publicar tus propios anuncios cuando quieras.</li>
-                    <li><strong>120 Anuncios Diarios Gestionados:</strong> Nos encargamos de publicar 120 anuncios adicionales cada día con tu contenido preferido.</li>
-                    <li><strong>Publicación Estratégica:</strong> Anuncios personalizados en las categorías de Revolico que tú elijas para maximizar el alcance.</li>
-                    <li><strong>Ventas Directas y Sin Comisiones:</strong> Tus fotos, tu descripción y tu teléfono. Los clientes te contactan directamente a ti.</li>
-                    <li class="alert-info"><strong>Transparencia Total:</strong> Tendrás acceso al perfil de Revolico para monitorear vistas e interacciones en tiempo real.</li>
-                </ul>
-                <div class="whatsapp-container">
-                    <a href="https://api.whatsapp.com/send/?phone=13068006341&text=Me+interesa+el+plan+Titanium&type=phone_number&app_absent=0" class="btn-whatsapp" target="_blank">
-                        <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.2-3.2-5.6-.3-8.6 2.5-11.3 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.3 3.7-5.5 5.5-9.3 1.9-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.3 5.7 23.5 9.2 31.6 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.5 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
-                        Titanium
-                    </a>
-                </div>
-            </div>
-        </div>
+      </div>
 
     </div>
 
-    <div class="back-home">
-        <a href="index.html">← Volver al inicio</a>
+    <!-- BASICO -->
+    <div class="price-card">
+
+      <div class="card-header">
+        <h2>Plan Básico</h2>
+        <p>Ideal para comenzar a automatizar tus ventas</p>
+      </div>
+
+      <div class="card-body">
+
+        <div class="price-box">
+          <span class="amount">30</span>
+          <span class="currency">USD / CUP al mes</span>
+        </div>
+
+        <ul class="features-list">
+
+          <li>
+            <strong>Licencia REAUTO+ (30 días):</strong>
+            Obtén nuestra extensión automatizada para publicar tus propios anuncios.
+          </li>
+
+          <li>
+            <strong>60 Anuncios Diarios Gestionados:</strong>
+            Creamos y administramos una cuenta adicional usando los anuncios que usted nos proporcione.
+          </li>
+
+          <li>
+            <strong>Publicación Estratégica:</strong>
+            Anuncios personalizados en categorías de Revolico seleccionadas por usted.
+          </li>
+
+          <li>
+            <strong>Ventas Directas y Sin Comisiones:</strong>
+            Los clientes te contactan directamente a ti.
+          </li>
+
+          <li class="alert-info">
+            <strong>Transparencia Total:</strong>
+            Acceso al perfil para monitorear vistas e interacciones.
+          </li>
+
+        </ul>
+
+        <div class="whatsapp-container">
+
+          <a
+            href="https://api.whatsapp.com/send/?phone=13068006341&text=Me+interesa+el+plan+Basico&type=phone_number&app_absent=0"
+            class="btn-whatsapp"
+            target="_blank">
+
+            Básico
+          </a>
+
+        </div>
+
+      </div>
+
     </div>
+
+    <!-- PLATINUM -->
+    <div class="price-card featured">
+
+      <div class="card-header">
+        <h2>Plan Platinum</h2>
+        <p>Mayor alcance y automatización avanzada</p>
+      </div>
+
+      <div class="card-body">
+
+        <div class="price-box">
+          <span class="amount">40</span>
+          <span class="currency">USD / CUP al mes</span>
+        </div>
+
+        <ul class="features-list">
+
+          <li>
+            <strong>Licencia REAUTO+ (30 días):</strong>
+            Acceso completo a nuestra extensión automatizada.
+          </li>
+
+          <li>
+            <strong>90 Anuncios Diarios Gestionados:</strong>
+            Creamos y administramos una cuenta adicional utilizando sus anuncios.
+          </li>
+
+          <li>
+            <strong>Publicación Estratégica:</strong>
+            Publicaciones optimizadas para máxima exposición.
+          </li>
+
+          <li>
+            <strong>Ventas Directas y Sin Comisiones:</strong>
+            Clientes directos sin intermediarios.
+          </li>
+
+          <li class="alert-info">
+            <strong>Transparencia Total:</strong>
+            Monitorea estadísticas y rendimiento en tiempo real.
+          </li>
+
+        </ul>
+
+        <div class="whatsapp-container">
+
+          <a
+            href="https://api.whatsapp.com/send/?phone=13068006341&text=Me+interesa+el+plan+Platinum&type=phone_number&app_absent=0"
+            class="btn-whatsapp"
+            target="_blank">
+
+            Platinum
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- TITANIUM -->
+    <div class="price-card">
+
+      <div class="card-header">
+        <h2>Plan Titanium</h2>
+        <p>Automatización al máximo nivel</p>
+      </div>
+
+      <div class="card-body">
+
+        <div class="price-box">
+          <span class="amount">50</span>
+          <span class="currency">USD / CUP al mes</span>
+        </div>
+
+        <ul class="features-list">
+
+          <li>
+            <strong>Licencia REAUTO+ (30 días):</strong>
+            Extensión automatizada completa incluida.
+          </li>
+
+          <li>
+            <strong>150 Anuncios Diarios Gestionados:</strong>
+            Administramos una cuenta adicional con sus anuncios.
+          </li>
+
+          <li>
+            <strong>Publicación Estratégica:</strong>
+            Máxima optimización y posicionamiento en Revolico.
+          </li>
+
+          <li>
+            <strong>Ventas Directas y Sin Comisiones:</strong>
+            Todo el beneficio económico es suyo.
+          </li>
+
+          <li class="alert-info">
+            <strong>Transparencia Total:</strong>
+            Seguimiento completo de estadísticas y visualizaciones.
+          </li>
+
+        </ul>
+
+        <div class="whatsapp-container">
+
+          <a
+            href="https://api.whatsapp.com/send/?phone=13068006341&text=Me+interesa+el+plan+Titanium&type=phone_number&app_absent=0"
+            class="btn-whatsapp"
+            target="_blank">
+
+            Titanium
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- VOLVER -->
+  <div class="back-home">
+    <a href="index.html">← Volver al inicio</a>
+  </div>
 
 </body>
 </html>
