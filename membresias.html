@@ -25,7 +25,6 @@
       overflow-x: hidden;
     }
 
-    /* HERO */
     .hero-premium {
       position: relative;
       width: 100%;
@@ -75,13 +74,12 @@
       line-height: 1.5;
     }
 
-    /* PRICING */
     .pricing-container {
-      max-width: 1400px;
+      max-width: 900px;
       margin: -30px auto 60px auto;
       padding: 0 20px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(2, minmax(300px, 1fr));
       gap: 25px;
       position: relative;
       z-index: 10;
@@ -105,18 +103,32 @@
     .price-card.featured {
       border-top-color: #0056b3;
       transform: scale(1.02);
+      box-shadow: 0 14px 38px rgba(0, 86, 179, 0.18);
     }
 
     .price-card.featured:hover {
       transform: translateY(-5px) scale(1.02);
     }
 
-    /* HEADER */
     .card-header {
       background: linear-gradient(135deg, var(--secondary), var(--primary));
       color: white;
       padding: 25px 20px;
       text-align: center;
+    }
+
+    .plan-label {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.14);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
     }
 
     .card-header h2 {
@@ -133,7 +145,6 @@
       font-style: italic;
     }
 
-    /* BODY */
     .card-body {
       padding: 30px 25px;
       flex-grow: 1;
@@ -158,7 +169,6 @@
       font-weight: 600;
     }
 
-    /* FEATURES */
     .features-list {
       list-style: none;
       padding: 0;
@@ -194,7 +204,6 @@
       content: "✨";
     }
 
-    /* BOTONES */
     .whatsapp-container {
       display: flex;
       justify-content: center;
@@ -237,7 +246,6 @@
       95% { transform: rotate(0deg); }
     }
 
-    /* BACK */
     .back-home {
       text-align: center;
       margin-bottom: 25px;
@@ -254,9 +262,7 @@
       text-decoration: underline;
     }
 
-    /* RESPONSIVE */
     @media (max-width: 768px) {
-
       .hero-premium h1 {
         font-size: 1.8rem;
       }
@@ -273,13 +279,16 @@
       .price-card.featured {
         transform: scale(1);
       }
+
+      .price-card.featured:hover {
+        transform: translateY(-5px);
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HERO -->
   <section class="hero-premium">
 
     <div class="premium-badge">
@@ -292,21 +301,19 @@
     </h1>
 
     <p>
-      Elige el plan perfecto para automatizar tus publicaciones,
+      Elige el plan perfecto para mantener tus anuncios activos,
       aumentar tu visibilidad y generar más ventas en Revolico.
     </p>
 
   </section>
 
-  <!-- PLANES -->
   <div class="pricing-container">
 
-    <!-- CORE -->
     <div class="price-card">
 
       <div class="card-header">
         <h2>Plan Core</h2>
-        <p>Máxima visibilidad para una cuenta activa</p>
+        <p>Nosotros trabajamos por ti</p>
       </div>
 
       <div class="card-body">
@@ -318,7 +325,6 @@
 
         <ul class="features-list">
 
-        
           <li>
             <strong>Hasta 170 anuncios diarios:</strong>
             Publicamos automáticamente hasta 170 anuncios utilizando una cuenta suya.
@@ -326,12 +332,17 @@
 
           <li>
             <strong>Renovación automática 24/7:</strong>
-            Tus publicaciones permanecen activas y visibles todo el día.
+            Tus publicaciones permanecen activas y visibles durante todo el día.
           </li>
 
           <li>
             <strong>Mayor alcance estratégico:</strong>
             Dividimos la actividad de la cuenta en diferentes horarios para aumentar la exposición.
+          </li>
+
+          <li>
+            <strong>Ventas directas:</strong>
+            Los clientes te contactan directamente a ti, sin intermediarios ni comisiones.
           </li>
 
           <li class="alert-info">
@@ -342,10 +353,10 @@
         </ul>
 
         <div class="whatsapp-container">
-          <a href="https://api.whatsapp.com/send/?phone=13068006341&text=Me+interesa+el+plan+Core&type=phone_number&app_absent=0"
+          <a href="https://api.whatsapp.com/send/?phone=13068006341&text=Me+interesa+el+Plan+Core&type=phone_number&app_absent=0"
              class="btn-whatsapp"
              target="_blank">
-             Plan Core
+             Elegir Plan Core
           </a>
         </div>
 
@@ -353,74 +364,18 @@
 
     </div>
 
-    <!-- BASICO -->
-    <div class="price-card">
-
-      <div class="card-header">
-        <h2>Plan Básico</h2>
-        <p>Automatización estable para comenzar a crecer</p>
-      </div>
-
-      <div class="card-body">
-
-        <div class="price-box">
-          <span class="amount">30</span>
-          <span class="currency">USD / CUP al mes</span>
-        </div>
-
-        <ul class="features-list">
-
-          <li>
-            <strong>Licencia REAUTO+ por 30 días:</strong>
-            Publica y renueva anuncios automáticamente desde Android o PC.
-          </li>
-
-          <li>
-            <strong>60 anuncios diarios gestionados:</strong>
-            Creamos y administramos una cuenta adicional usando el contenido que usted nos proporcione.
-          </li>
-
-          <li>
-            <strong>Publicaciones optimizadas:</strong>
-            Distribuimos los anuncios estratégicamente para generar más visitas.
-          </li>
-
-          <li>
-            <strong>Ventas directas:</strong>
-            Tus clientes te contactan directamente sin intermediarios ni comisiones.
-          </li>
-
-          <li class="alert-info">
-            <strong>Control total:</strong>
-            Monitorea visualizaciones y actividad de la cuenta en tiempo real.
-          </li>
-
-        </ul>
-
-        <div class="whatsapp-container">
-          <a href="https://api.whatsapp.com/send/?phone=13068006341&text=Me+interesa+el+plan+Basico&type=phone_number&app_absent=0"
-             class="btn-whatsapp"
-             target="_blank">
-             Plan Básico
-          </a>
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- PLATINUM -->
     <div class="price-card featured">
 
       <div class="card-header">
-        <h2>Plan Platinum</h2>
-        <p>Más alcance, más tráfico y automatización avanzada</p>
+        <div class="plan-label">Recomendado</div>
+        <h2>Plan REAUTO+</h2>
+        <p>Todo el Core + extensión por 30 días</p>
       </div>
 
       <div class="card-body">
 
         <div class="price-box">
-          <span class="amount">40</span>
+          <span class="amount">25</span>
           <span class="currency">USD / CUP al mes</span>
         </div>
 
@@ -428,92 +383,41 @@
 
           <li>
             <strong>Licencia REAUTO+ por 30 días:</strong>
-            Sistema automatizado completo para publicar desde cualquier dispositivo.
+            Incluye acceso a la extensión para publicar y renovar anuncios desde Android o PC.
           </li>
 
           <li>
-            <strong>90 anuncios diarios gestionados:</strong>
-            Administramos una cuenta adicional utilizando los anuncios que usted nos envíe.
+            <strong>Hasta 170 anuncios diarios:</strong>
+            Publicamos automáticamente hasta 170 anuncios utilizando una cuenta suya.
           </li>
 
           <li>
-            <strong>Posicionamiento avanzado:</strong>
-            Tus anuncios se publican en horarios estratégicos para maximizar exposición.
+            <strong>Renovación automática 24/7:</strong>
+            Tus publicaciones permanecen activas y visibles durante todo el día.
           </li>
 
           <li>
-            <strong>Ventas sin límites:</strong>
-            Conservas el 100% de tus ganancias sin pagar comisiones.
+            <strong>Mayor alcance estratégico:</strong>
+            Dividimos la actividad de la cuenta en diferentes horarios para aumentar la exposición.
+          </li>
+
+          <li>
+            <strong>Más control:</strong>
+            Además de nuestra gestión diaria, usted cuenta con su propia herramienta para automatizar publicaciones.
           </li>
 
           <li class="alert-info">
-            <strong>Mayor rendimiento:</strong>
-            Ideal para negocios que necesitan tráfico constante y mayor visibilidad.
+            <strong>Mejor opción por solo 5 USD adicionales:</strong>
+            Ideal para vendedores que quieren máxima presencia y también la herramienta REAUTO+ incluida.
           </li>
 
         </ul>
 
         <div class="whatsapp-container">
-          <a href="https://api.whatsapp.com/send/?phone=13068006341&text=Me+interesa+el+plan+Platinum&type=phone_number&app_absent=0"
+          <a href="https://api.whatsapp.com/send/?phone=13068006341&text=Me+interesa+el+Plan+REAUTO%2B&type=phone_number&app_absent=0"
              class="btn-whatsapp"
              target="_blank">
-             Plan Platinum
-          </a>
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- TITANIUM -->
-    <div class="price-card">
-
-      <div class="card-header">
-        <h2>Plan Titanium</h2>
-        <p>La máxima potencia de automatización REAUTO+</p>
-      </div>
-
-      <div class="card-body">
-
-        <div class="price-box">
-          <span class="amount">50</span>
-          <span class="currency">USD / CUP al mes</span>
-        </div>
-
-        <ul class="features-list">
-
-          <li>
-            <strong>Licencia REAUTO+ por 30 días:</strong>
-            Acceso premium completo a todas las funciones de automatización.
-          </li>
-
-          <li>
-            <strong>150 anuncios diarios gestionados:</strong>
-            Creamos y administramos una cuenta adicional para publicar masivamente sus anuncios.
-          </li>
-
-          <li>
-            <strong>Máxima exposición:</strong>
-            Publicaciones continuas y estratégicas para dominar las categorías principales.
-          </li>
-
-          <li>
-            <strong>Escalabilidad total:</strong>
-            Diseñado para vendedores con gran volumen de productos y tráfico constante.
-          </li>
-
-          <li class="alert-info">
-            <strong>Potencia empresarial:</strong>
-            El plan ideal para convertir Revolico en una máquina automática de ventas.
-          </li>
-
-        </ul>
-
-        <div class="whatsapp-container">
-          <a href="https://api.whatsapp.com/send/?phone=13068006341&text=Me+interesa+el+plan+Titanium&type=phone_number&app_absent=0"
-             class="btn-whatsapp"
-             target="_blank">
-             Plan Titanium
+             Elegir Plan REAUTO+
           </a>
         </div>
 
@@ -523,7 +427,6 @@
 
   </div>
 
-  <!-- VOLVER -->
   <div class="back-home">
     <a href="index.html">← Volver al inicio</a>
   </div>
